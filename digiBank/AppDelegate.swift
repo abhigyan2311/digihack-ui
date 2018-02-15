@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Bolts
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let config = ParseClientConfiguration(block: {
+            (ParseMutableClientConfiguration) -> Void in
+            ParseMutableClientConfiguration.applicationId = "appKey231195";
+            ParseMutableClientConfiguration.server = "http://ec2-13-127-176-156.ap-south-1.compute.amazonaws.com:1337/parse";
+            ParseMutableClientConfiguration.isLocalDatastoreEnabled = true;
+        });
+        Parse.initialize(with: config);
+        
+        let defaultACL = PFACL();
+        PFACL.setDefault(defaultACL, withAccessForCurrentUser:true)
+        
         return true
     }
 

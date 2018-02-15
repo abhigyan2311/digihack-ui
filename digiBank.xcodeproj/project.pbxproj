@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562992974070E2FB44BBD7D3 /* Pods_digiBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37166E0E0A74589F61D6665 /* Pods_digiBank.framework */; };
+		5E12A37E2035E56000A7840A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E12A37D2035E56000A7840A /* SignUpViewController.swift */; };
 		5E497F952035D2F0009DEC15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E497F942035D2F0009DEC15 /* AppDelegate.swift */; };
 		5E497F972035D2F0009DEC15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E497F962035D2F0009DEC15 /* ViewController.swift */; };
 		5E497F9A2035D2F0009DEC15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E497F982035D2F0009DEC15 /* Main.storyboard */; };
 		5E497F9C2035D2F0009DEC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E497F9B2035D2F0009DEC15 /* Assets.xcassets */; };
 		5E497F9F2035D2F0009DEC15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E497F9D2035D2F0009DEC15 /* LaunchScreen.storyboard */; };
+		5E4E15B120360DE800EEDC50 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4E15B020360DE800EEDC50 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19150F894BCDDFFC1A439A87 /* Pods-digiBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digiBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-digiBank/Pods-digiBank.release.xcconfig"; sourceTree = "<group>"; };
+		5E12A37D2035E56000A7840A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5E497F912035D2F0009DEC15 /* digiBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = digiBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E497F942035D2F0009DEC15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E497F962035D2F0009DEC15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		5E497F9B2035D2F0009DEC15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E497F9E2035D2F0009DEC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E497FA02035D2F0009DEC15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4E15B020360DE800EEDC50 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E76904F1D6F61F1D23FB84A2 /* Pods-digiBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digiBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-digiBank/Pods-digiBank.debug.xcconfig"; sourceTree = "<group>"; };
+		F37166E0E0A74589F61D6665 /* Pods_digiBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_digiBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562992974070E2FB44BBD7D3 /* Pods_digiBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		166AAD26A13A2B44BF3A6BE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F37166E0E0A74589F61D6665 /* Pods_digiBank.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E12A37C2035E52B00A7840A /* UserSystem */ = {
+			isa = PBXGroup;
+			children = (
+				5E12A37D2035E56000A7840A /* SignUpViewController.swift */,
+				5E4E15B020360DE800EEDC50 /* SignInViewController.swift */,
+			);
+			path = UserSystem;
+			sourceTree = "<group>";
+		};
 		5E497F882035D2F0009DEC15 = {
 			isa = PBXGroup;
 			children = (
 				5E497F932035D2F0009DEC15 /* digiBank */,
 				5E497F922035D2F0009DEC15 /* Products */,
+				85B619BCD19DD5895D732367 /* Pods */,
+				166AAD26A13A2B44BF3A6BE7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +82,7 @@
 		5E497F932035D2F0009DEC15 /* digiBank */ = {
 			isa = PBXGroup;
 			children = (
+				5E12A37C2035E52B00A7840A /* UserSystem */,
 				5E497F942035D2F0009DEC15 /* AppDelegate.swift */,
 				5E497F962035D2F0009DEC15 /* ViewController.swift */,
 				5E497F982035D2F0009DEC15 /* Main.storyboard */,
@@ -64,6 +93,15 @@
 			path = digiBank;
 			sourceTree = "<group>";
 		};
+		85B619BCD19DD5895D732367 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E76904F1D6F61F1D23FB84A2 /* Pods-digiBank.debug.xcconfig */,
+				19150F894BCDDFFC1A439A87 /* Pods-digiBank.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E497FA32035D2F0009DEC15 /* Build configuration list for PBXNativeTarget "digiBank" */;
 			buildPhases = (
+				A5CF3A40249374545A795CA3 /* [CP] Check Pods Manifest.lock */,
 				5E497F8D2035D2F0009DEC15 /* Sources */,
 				5E497F8E2035D2F0009DEC15 /* Frameworks */,
 				5E497F8F2035D2F0009DEC15 /* Resources */,
+				8EAFF59C6BCFE1164E5D4DD3 /* [CP] Embed Pods Frameworks */,
+				A2895BDDB0AC515A7A2B72B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,11 +172,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8EAFF59C6BCFE1164E5D4DD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-digiBank/Pods-digiBank-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-digiBank/Pods-digiBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2895BDDB0AC515A7A2B72B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-digiBank/Pods-digiBank-resources.sh",
+				"${PODS_ROOT}/Parse/Parse/Resources/en.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-digiBank/Pods-digiBank-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5CF3A40249374545A795CA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-digiBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E497F8D2035D2F0009DEC15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E4E15B120360DE800EEDC50 /* SignInViewController.swift in Sources */,
+				5E12A37E2035E56000A7840A /* SignUpViewController.swift in Sources */,
 				5E497F972035D2F0009DEC15 /* ViewController.swift in Sources */,
 				5E497F952035D2F0009DEC15 /* AppDelegate.swift in Sources */,
 			);
@@ -272,31 +374,35 @@
 		};
 		5E497FA42035D2F0009DEC15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E76904F1D6F61F1D23FB84A2 /* Pods-digiBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8534MXKXS9;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = digiBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbs.digiBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5E497FA52035D2F0009DEC15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19150F894BCDDFFC1A439A87 /* Pods-digiBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8534MXKXS9;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = digiBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbs.digiBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logoView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        logoView.layer.borderWidth = 1
+        logoView.layer.masksToBounds = false
+        logoView.layer.borderColor = UIColor.white.cgColor
+        logoView.layer.cornerRadius = logoView.frame.height/2
+        logoView.clipsToBounds = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
