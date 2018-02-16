@@ -22,7 +22,11 @@ class SignInViewController: UIViewController {
     
     @IBAction func loginBTN(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameTF.text!, password: passwordTF.text!) { (user, error) in
-            print(user!);
+            if error == nil {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                self.present(homeViewController, animated:true, completion:nil)
+            }
         }
     }
     

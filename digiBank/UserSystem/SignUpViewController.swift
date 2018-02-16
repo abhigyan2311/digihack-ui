@@ -57,6 +57,8 @@ class SignUpViewController: UIViewController {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let signInViewController = storyBoard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
                 self.present(signInViewController, animated:true, completion:nil)
+            } else {
+                print(error)
             }
         }
     }

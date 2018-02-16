@@ -14,7 +14,9 @@
 		5E497F9A2035D2F0009DEC15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E497F982035D2F0009DEC15 /* Main.storyboard */; };
 		5E497F9C2035D2F0009DEC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E497F9B2035D2F0009DEC15 /* Assets.xcassets */; };
 		5E497F9F2035D2F0009DEC15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E497F9D2035D2F0009DEC15 /* LaunchScreen.storyboard */; };
+		5E4BD1B6203738F400983608 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4BD1B5203738F400983608 /* HomeViewController.swift */; };
 		5E4E15B120360DE800EEDC50 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4E15B020360DE800EEDC50 /* SignInViewController.swift */; };
+		5ED7CB7220376D41003277F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7CB7120376D41003277F7 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		5E497F9B2035D2F0009DEC15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E497F9E2035D2F0009DEC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E497FA02035D2F0009DEC15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4BD1B5203738F400983608 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E4E15B020360DE800EEDC50 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5ED7CB7120376D41003277F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E76904F1D6F61F1D23FB84A2 /* Pods-digiBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digiBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-digiBank/Pods-digiBank.debug.xcconfig"; sourceTree = "<group>"; };
 		F37166E0E0A74589F61D6665 /* Pods_digiBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_digiBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +86,7 @@
 		5E497F932035D2F0009DEC15 /* digiBank */ = {
 			isa = PBXGroup;
 			children = (
+				5E4BD1B4203738DB00983608 /* Home */,
 				5E12A37C2035E52B00A7840A /* UserSystem */,
 				5E497F942035D2F0009DEC15 /* AppDelegate.swift */,
 				5E497F962035D2F0009DEC15 /* ViewController.swift */,
@@ -91,6 +96,15 @@
 				5E497FA02035D2F0009DEC15 /* Info.plist */,
 			);
 			path = digiBank;
+			sourceTree = "<group>";
+		};
+		5E4BD1B4203738DB00983608 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5E4BD1B5203738F400983608 /* HomeViewController.swift */,
+				5ED7CB7120376D41003277F7 /* AccountViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		85B619BCD19DD5895D732367 /* Pods */ = {
@@ -181,12 +195,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-digiBank/Pods-digiBank-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Cards/Cards.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cards.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -236,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E4BD1B6203738F400983608 /* HomeViewController.swift in Sources */,
 				5E4E15B120360DE800EEDC50 /* SignInViewController.swift in Sources */,
+				5ED7CB7220376D41003277F7 /* AccountViewController.swift in Sources */,
 				5E12A37E2035E56000A7840A /* SignUpViewController.swift in Sources */,
 				5E497F972035D2F0009DEC15 /* ViewController.swift in Sources */,
 				5E497F952035D2F0009DEC15 /* AppDelegate.swift in Sources */,
