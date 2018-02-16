@@ -17,6 +17,7 @@
 		5E4BD1B6203738F400983608 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4BD1B5203738F400983608 /* HomeViewController.swift */; };
 		5E4E15B120360DE800EEDC50 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4E15B020360DE800EEDC50 /* SignInViewController.swift */; };
 		5ED7CB7220376D41003277F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7CB7120376D41003277F7 /* AccountViewController.swift */; };
+		5ED7CB75203776F3003277F7 /* digorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7CB74203776F3003277F7 /* digorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5E4BD1B5203738F400983608 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E4E15B020360DE800EEDC50 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5ED7CB7120376D41003277F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		5ED7CB74203776F3003277F7 /* digorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = digorViewController.swift; sourceTree = "<group>"; };
 		E76904F1D6F61F1D23FB84A2 /* Pods-digiBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-digiBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-digiBank/Pods-digiBank.debug.xcconfig"; sourceTree = "<group>"; };
 		F37166E0E0A74589F61D6665 /* Pods_digiBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_digiBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 		5E497F932035D2F0009DEC15 /* digiBank */ = {
 			isa = PBXGroup;
 			children = (
+				5ED7CB73203776D2003277F7 /* digor */,
 				5E4BD1B4203738DB00983608 /* Home */,
 				5E12A37C2035E52B00A7840A /* UserSystem */,
 				5E497F942035D2F0009DEC15 /* AppDelegate.swift */,
@@ -105,6 +108,14 @@
 				5ED7CB7120376D41003277F7 /* AccountViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		5ED7CB73203776D2003277F7 /* digor */ = {
+			isa = PBXGroup;
+			children = (
+				5ED7CB74203776F3003277F7 /* digorViewController.swift */,
+			);
+			path = digor;
 			sourceTree = "<group>";
 		};
 		85B619BCD19DD5895D732367 /* Pods */ = {
@@ -262,6 +273,7 @@
 				5E12A37E2035E56000A7840A /* SignUpViewController.swift in Sources */,
 				5E497F972035D2F0009DEC15 /* ViewController.swift in Sources */,
 				5E497F952035D2F0009DEC15 /* AppDelegate.swift in Sources */,
+				5ED7CB75203776F3003277F7 /* digorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
