@@ -10,6 +10,7 @@ import UIKit
 import Bolts
 import Parse
 import CoreLocation
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -30,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let defaultACL = PFACL();
         PFACL.setDefault(defaultACL, withAccessForCurrentUser:true)
         
-        determineMyCurrentLocation()
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }

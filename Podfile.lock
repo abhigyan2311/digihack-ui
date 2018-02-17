@@ -1,40 +1,41 @@
 PODS:
   - Bolts/Tasks (1.8.4)
-  - Cards (1.3.1):
-    - Player
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - IQKeyboardManagerSwift (5.0.3)
   - Parse (1.15.3):
     - Bolts/Tasks (~> 1.8)
-  - Player (0.8.3)
+  - razorpay-pod (0.15.1)
+  - Regex.swift (2.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Cards (from `https://github.com/PaoloCuscela/Cards.git`)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - IQKeyboardManagerSwift
   - Parse
+  - razorpay-pod
+  - Regex.swift
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
-  Cards:
-    :git: https://github.com/PaoloCuscela/Cards.git
   ChameleonFramework:
     :git: https://github.com/ViccAlexander/Chameleon.git
 
 CHECKOUT OPTIONS:
-  Cards:
-    :commit: 240ee3b1c8066811891a65afda4436c760a2f317
-    :git: https://github.com/PaoloCuscela/Cards.git
   ChameleonFramework:
     :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
     :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Cards: 3a0bc53aa35b680d0baf0ff9d21b67ba916844e5
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
   Parse: cdc0f1f975ee8be0409e66f21b05df4ae067047c
-  Player: ce00516fdce5a44c644697200244bc4de7e50a24
+  razorpay-pod: 1a549646ac726f7f11495d8a7b810770c563ecc9
+  Regex.swift: b6a0ce02a283b3fb5a55b2a737e8b061360a8d6e
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ae0be1152049bc3fe3cd8514d5239e1189e87da2
+PODFILE CHECKSUM: ef27f7acbb2fcc2d4ccf68b8e14066978b0a753e
 
 COCOAPODS: 1.4.0

@@ -39,6 +39,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow us to use your photos</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Will you allow this app to always know your location?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -47,6 +49,8 @@
 	<string>We need it.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>We need it pls.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow us to use camera</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -72,5 +76,10 @@
 			</dict>
 		</dict>
 	</dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 </dict>
 </plist>
