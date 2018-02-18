@@ -7,5 +7,5 @@ target 'digiBank' do
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
   pod 'Regex.swift'
-  pod 'razorpay-pod'
+  pod 'razorpay-pod', :git => 'https://github.com/razorpay/razorpay-pod.git'
 end

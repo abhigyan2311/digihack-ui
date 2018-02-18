@@ -16,6 +16,12 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = PFUser.current()
+        if user != nil {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let digorViewController = storyBoard.instantiateViewController(withIdentifier: "DigorViewController") as! DigorViewController
+            self.present(digorViewController, animated:true, completion:nil)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -23,9 +29,11 @@ class SignInViewController: UIViewController {
     @IBAction func loginBTN(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameTF.text!, password: passwordTF.text!) { (user, error) in
             if error == nil {
-//                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//                let homeViewController = storyBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//                self.present(homeViewController, animated:true, completion:nil)
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let digorViewController = storyBoard.instantiateViewController(withIdentifier: "DigorViewController") as! DigorViewController
+                self.present(digorViewController, animated:true, completion:nil)
+            } else {
+                print(error)
             }
         }
     }

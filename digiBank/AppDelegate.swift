@@ -11,7 +11,9 @@ import Bolts
 import Parse
 import CoreLocation
 import IQKeyboardManagerSwift
+import UserNotifications
 
+@available(iOS 11, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
@@ -31,9 +33,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let defaultACL = PFACL();
         PFACL.setDefault(defaultACL, withAccessForCurrentUser:true)
         
+        registerForPushNotifications()
+        
         IQKeyboardManager.sharedManager().enable = true
         
         return true
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let installation = PFInstallation.current()
+        installation!.setDeviceTokenFrom(deviceToken)
+        installation!.channels = ["global","ios"]
+        installation!.saveInBackground()
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        if error._code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.\n")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@\n", error)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -93,6 +112,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Error \(error)")
+    }
+    
+    func registerForPushNotifications() {
+        // iOS 10 support
+        if #available(iOS 11, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in
+                guard granted else { return }
+                self.getNotificationSettings()
+            }
+        }
+            // iOS 9 support
+        else if #available(iOS 9, *) {
+            if UIApplication.shared.isRegisteredForRemoteNotifications == false {
+                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+                DispatchQueue.main.async(execute: {
+                    UIApplication.shared.registerForRemoteNotifications()
+                })
+            }
+        }
+    }
+    
+    func getNotificationSettings() {
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+                guard settings.authorizationStatus == .authorized else { return }
+                DispatchQueue.main.async(execute: {
+                    UIApplication.shared.registerForRemoteNotifications()
+                })
+            }
+        }
     }
 
 

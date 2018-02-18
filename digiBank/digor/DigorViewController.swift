@@ -12,7 +12,7 @@ import SwiftyJSON
 import LocalAuthentication
 import AVFoundation
 
-class digorViewController: UIViewController, UITextFieldDelegate, RazorpayPaymentCompletionProtocol {
+class DigorViewController: UIViewController, UITextFieldDelegate, RazorpayPaymentCompletionProtocol {
 
     @IBOutlet weak var digorView: UIView!
     @IBOutlet weak var digorReply: UITextView!
@@ -39,18 +39,36 @@ class digorViewController: UIViewController, UITextFieldDelegate, RazorpayPaymen
         inputTF.attributedPlaceholder = NSAttributedString(string: "Ask Anything!",
                                                          attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         let user = PFUser.current()
-        let accountQuery = PFQuery(className: "Account")
-        accountQuery.whereKey("user", equalTo: user!)
-        accountQuery.getFirstObjectInBackground(block: { (accountObj, error) in
-            if error == nil {
-                let balance = accountObj!["balance"]
-                let accountNo = accountObj!["accountNo"]
-                let upi = accountObj!["upi"]
-                self.defaults.set(accountNo!, forKey: "accountNo")
-                self.defaults.set(upi!, forKey: "upi")
-                self.digorReply.text = "Hi! Your current balance is \n₹ \(balance ?? 0.0)"
-            }
-        })
+        if user == nil {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let signInViewController = storyBoard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+            self.present(signInViewController, animated:true, completion:nil)
+        } else {
+            let installation = PFInstallation.current()
+            installation!["user"] = user
+            installation?.saveInBackground()
+            
+            PFCloud.callFunction(inBackground: "pushNotification", withParameters: [:], block: { (result, error) in
+                if error == nil {
+                    print(result)
+                } else {
+                    print(error)
+                }
+            })
+            
+            let accountQuery = PFQuery(className: "Account")
+            accountQuery.whereKey("user", equalTo: user!)
+            accountQuery.getFirstObjectInBackground(block: { (accountObj, error) in
+                if error == nil {
+                    let balance = accountObj!["balance"]
+                    let accountNo = accountObj!["accountNo"]
+                    let upi = accountObj!["upi"]
+                    self.defaults.set(accountNo!, forKey: "accountNo")
+                    self.defaults.set(upi!, forKey: "upi")
+                    self.digorReply.text = "Hi! Your current balance is \n₹ \(balance ?? 0.0)"
+                }
+            })
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
@@ -88,6 +106,7 @@ class digorViewController: UIViewController, UITextFieldDelegate, RazorpayPaymen
                         if objects!.count > 0 {
                             let deductAmt = json["result"]["parameters"]["unit-currency"]["amount"].double
                             self.authenticationWithTouchID(reply: json["result"]["fulfillment"]["speech"].string!, amount: deductAmt!)
+                            self.inputTF.text = ""
                         } else {
                             self.digorReply.text = "Add \(payee!) to your payees first"
                             self.inputTF.text = ""
@@ -154,6 +173,8 @@ class digorViewController: UIViewController, UITextFieldDelegate, RazorpayPaymen
                         let balance = accountObj!["balance"] as! Double
                         accountObj!["balance"] = balance + amount
                         accountObj?.saveInBackground()
+                    } else {
+                        print(error)
                     }
                 })
                 razorpay.open(options)

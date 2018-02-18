@@ -6,7 +6,7 @@ PODS:
   - IQKeyboardManagerSwift (5.0.3)
   - Parse (1.15.3):
     - Bolts/Tasks (~> 1.8)
-  - razorpay-pod (0.15.1)
+  - razorpay-pod (1.0.8)
   - Regex.swift (2.0)
   - SwiftyJSON (3.1.4)
 
@@ -14,28 +14,33 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - IQKeyboardManagerSwift
   - Parse
-  - razorpay-pod
+  - razorpay-pod (from `https://github.com/razorpay/razorpay-pod.git`)
   - Regex.swift
   - SwiftyJSON
 
 EXTERNAL SOURCES:
   ChameleonFramework:
     :git: https://github.com/ViccAlexander/Chameleon.git
+  razorpay-pod:
+    :git: https://github.com/razorpay/razorpay-pod.git
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
     :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
     :git: https://github.com/ViccAlexander/Chameleon.git
+  razorpay-pod:
+    :commit: e3bdf6f0fe4a10ce1b759ae9ce522c2b488c5141
+    :git: https://github.com/razorpay/razorpay-pod.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
   Parse: cdc0f1f975ee8be0409e66f21b05df4ae067047c
-  razorpay-pod: 1a549646ac726f7f11495d8a7b810770c563ecc9
+  razorpay-pod: a872484c8683f3b375d01d377da97b9c994d1835
   Regex.swift: b6a0ce02a283b3fb5a55b2a737e8b061360a8d6e
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ef27f7acbb2fcc2d4ccf68b8e14066978b0a753e
+PODFILE CHECKSUM: 87c2a650474c82e6bed15f913f5c87980770bc7e
 
 COCOAPODS: 1.4.0
