@@ -48,14 +48,6 @@ class DigorViewController: UIViewController, UITextFieldDelegate, RazorpayPaymen
             installation!["user"] = user
             installation?.saveInBackground()
             
-            PFCloud.callFunction(inBackground: "pushNotification", withParameters: [:], block: { (result, error) in
-                if error == nil {
-                    print(result)
-                } else {
-                    print(error)
-                }
-            })
-            
             let accountQuery = PFQuery(className: "Account")
             accountQuery.whereKey("user", equalTo: user!)
             accountQuery.getFirstObjectInBackground(block: { (accountObj, error) in

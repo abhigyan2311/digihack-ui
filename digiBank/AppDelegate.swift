@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         PFACL.setDefault(defaultACL, withAccessForCurrentUser:true)
         
         registerForPushNotifications()
+        determineMyCurrentLocation()
         
         IQKeyboardManager.sharedManager().enable = true
         
@@ -82,31 +83,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.startMonitoringSignificantLocationChanges()
-            //locationManager.startUpdatingHeading()
+//            locationManager.startMonitoringSignificantLocationChanges()
+            locationManager.startUpdatingLocation()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        
-        // manager.stopUpdatingLocation()
-        
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
-        
-//        PFCloud.callFunction(inBackground: "geo", withParameters: ["lat":userLocation.coordinate.latitude, "long":userLocation.coordinate.longitude]) { (result, error) in
-//            if error == nil {
-//                print(result!)
-//            } else {
-//                print(error)
-//            }
-//        }
+        let user = PFUser.current()
+        if user != nil {
+            PFCloud.callFunction(inBackground: "geo", withParameters: ["sessionToken": user!.sessionToken!, "lat":userLocation.coordinate.latitude, "long":userLocation.coordinate.longitude]) { (result, error) in
+                if error == nil {
+                    print(result!)
+                } else {
+                    print(error)
+                }
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
